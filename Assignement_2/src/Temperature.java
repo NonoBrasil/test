@@ -10,7 +10,7 @@ public class Temperature {
 		        FileReader filereader = null;
 		        BufferedReader bufferedreader = null;
 		        try {
-		            filereader = new FileReader("/sys/class/thermal/thermal_zone0/temp.txt");
+		            filereader = new FileReader("/sys/class/thermal/thermal_zone0/temp");
 		            bufferedreader = new BufferedReader(filereader);
 		            String strCurrentLine;
 		            while ((strCurrentLine = bufferedreader.readLine()) != null) {
