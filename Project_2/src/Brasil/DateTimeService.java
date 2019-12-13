@@ -145,7 +145,7 @@ public class DateTimeService
  	 //Convert string to char : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/charAt
  	 minutes=String.valueOf(time_rasp.charAt(15))+String.valueOf(time_rasp.charAt(16));
  	 seconds=String.valueOf(time_rasp.charAt(18))+String.valueOf(time_rasp.charAt(19));
- 	 time=hour+":"+minutes+":"+seconds;
+ 	 time=hour+minutes+seconds;
  	 tab[0]=time;
  	 
      FileReader filereader = null;
