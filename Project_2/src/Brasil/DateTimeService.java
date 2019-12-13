@@ -128,8 +128,54 @@ public class DateTimeService
    public String[] getDateAndTime()
    {
 	 Date d = this.calendar.getTime();
-	 String[]tab=new String[2];
-	 tab[0]=d.toString();
+	 ///TIME RECOVERY
+	 String time;
+     String hour;
+     String minutes;
+     String seconds;
+        	
+     String time_rasp= d.toString();
+	 //We make a table of string to be able to send the cLient the corresponding time and temperature.
+	 String [ ] tab = new String[2];
+	 
+	 hour=String.valueOf(time_rasp.charAt(12))+String.valueOf(time_rasp.charAt(13));
+ 	 //Convert char to string : https://www.javatpoint.com/java-char-to-string
+ 	 //Convert string to char : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/charAt
+ 	 minutes=String.valueOf(time_rasp.charAt(15))+String.valueOf(time_rasp.charAt(16));
+ 	 seconds=String.valueOf(time_rasp.charAt(18))+String.valueOf(time_rasp.charAt(19));
+ 	 time=hour+":"+minutes+":"+seconds;
+ 	 tab[0]=time;
+ 	 
+     FileReader filereader = null;
+     BufferedReader bufferedreader = null;
+     try {
+         filereader = new FileReader("/sys/class/thermal/thermal_zone0/temp");
+         bufferedreader = new BufferedReader(filereader);
+         String strCurrentLine=null;
+         while ((strCurrentLine = bufferedreader.readLine()) != null) {
+        	tab[1]=strCurrentLine;	//The second line of the table collects the temperature.
+        	System.out.println(strCurrentLine);
+         }
+     }
+     
+     catch (IOException e) 
+     {
+         e.printStackTrace();
+     } 
+     
+     finally {
+         try {
+           if (bufferedreader != null)
+             bufferedreader.close();
+           if (filereader != null)
+             filereader.close();
+         } 
+         catch (IOException e) 
+         {
+           e.printStackTrace();
+         }
+       }
+ 	 
      return tab;	
    }	
 }

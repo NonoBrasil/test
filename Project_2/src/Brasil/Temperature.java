@@ -43,6 +43,14 @@ public class Temperature extends Canvas{
       		System.out.println("      or:  java Client hostname (e.g. java Client localhost)");
       	}
   		condition++;
+  		try
+  		{
+  			Thread.sleep(1000);
+  		}
+  		catch(InterruptedException ex)
+  		{
+  			Thread.currentThread().interrupt();
+  		}
   	}
   	    
   	System.out.println("**. End of Application.");
@@ -64,7 +72,7 @@ public class Temperature extends Canvas{
  	 //The abscissa represent the time and the ordinate represent the temperature at this moment
  	 /*Graphics G;
  	 Color Color2 = new Color(255,0, 0); //red
-   G.setColor(Color2);
+   	 G.setColor(Color2);
  	 G.drawLine(0, Tmin, actual_time, Tmin);	//line representing the minimum temperature
  	 G.drawLine(0, Tmax, actual_time, Tmax);	//line representing the maximum temperature
  	 actual_time++;	//incrementing of the time
