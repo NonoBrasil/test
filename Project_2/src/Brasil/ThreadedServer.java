@@ -7,10 +7,11 @@ package Brasil;
 
 import java.net.*;
 import java.io.*;
+-Djava.net.preferIPv4Stack=true;
 
 public class ThreadedServer 
 {
-	private static int portNumber = 5050;
+	private static int portNumber = 5000;
 	
 	public static void main(String args[]) {
 		

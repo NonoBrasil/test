@@ -28,20 +28,21 @@ public class Temperature extends Canvas{
   {
 
   	int condition =0;
+  	//String[] previous_tab= new String[2];	//this tab is used for saving the previous value of temperature and time
   	while (condition!=10)
   	{
   		
-  		if(args.length==1)
+  		//if(args.length==1)
       	{
-      		Client theApp = new Client(args[0]);
+      		Client theApp = new Client("raspberrypi.local");
   		    theApp.getDate();
   		}
-      	else
+      	/*else
       	{
       		System.out.println("Error: you must provide the address of the server");
       		System.out.println("Usage is:  java Client x.x.x.x  (e.g. java Client 192.168.7.2)");
       		System.out.println("      or:  java Client hostname (e.g. java Client localhost)");
-      	}
+      	}*/
   		condition++;
   		try
   		{
@@ -59,7 +60,7 @@ public class Temperature extends Canvas{
   public void paint(Graphics g, int X, int Y)		///
   {
 		//X->time
-  	//Y->temperature
+  		//Y->temperature
 		Color Color1 = new Color(0,6, 255); //blue
       g.setColor(Color1);
       g.drawOval(X,Y, 10, 10);
