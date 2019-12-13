@@ -140,11 +140,11 @@ public class DateTimeService
 	 //We make a table of string to be able to send the cLient the corresponding time and temperature.
 	 String [ ] tab = new String[2];
 	 
-	 hour=String.valueOf(time_rasp.charAt(12))+String.valueOf(time_rasp.charAt(13));
+	 hour=String.valueOf(time_rasp.charAt(11))+String.valueOf(time_rasp.charAt(12));
  	 //Convert char to string : https://www.javatpoint.com/java-char-to-string
  	 //Convert string to char : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/charAt
- 	 minutes=String.valueOf(time_rasp.charAt(15))+String.valueOf(time_rasp.charAt(16));
- 	 seconds=String.valueOf(time_rasp.charAt(18))+String.valueOf(time_rasp.charAt(19));
+ 	 minutes=String.valueOf(time_rasp.charAt(14))+String.valueOf(time_rasp.charAt(15));
+ 	 seconds=String.valueOf(time_rasp.charAt(17))+String.valueOf(time_rasp.charAt(18));
  	 time=hour+minutes+seconds;
  	 tab[0]=time;
  	 
