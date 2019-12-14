@@ -7,11 +7,11 @@ package Brasil;
 
 import java.net.*;
 import java.io.*;
--Djava.net.preferIPv4Stack=true;
 
 public class ThreadedServer 
 {
-	private static int portNumber = 5000;
+	private static int portNumber = 5050;
+	private static String LED0_PATH = "/sys/class/leds/led0";
 	
 	public static void main(String args[]) {
 		
@@ -49,6 +49,19 @@ public class ThreadedServer
             ThreadedConnectionHandler con = new ThreadedConnectionHandler(clientSocket);
             con.start(); 
             System.out.println("02. -- Finished communicating with client:" + clientSocket.getInetAddress().toString());
+            //To make the raspberry led flash
+            //https://github.com/derekmolloy/ee402/blob/master/LEDjava/src/ee402/BasicLEDExample.java
+            try {
+            	BufferedWriter bw = new BufferedWriter ( new FileWriter (LED0_PATH+"/trigger"));
+    			bw.write("none");
+    			bw.close();
+    			bw = new BufferedWriter ( new FileWriter (LED0_PATH+"/brightness"));
+    			bw.write(args[0].equalsIgnoreCase("On")? "1":"0");
+    			bw.close();
+            }
+            catch(IOException e){
+    			System.out.println("Failed to access the Raspberry LEDs");
+    		}
         }
         // Server is no longer listening for client connections - time to shut down.
         try 
