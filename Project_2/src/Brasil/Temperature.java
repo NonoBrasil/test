@@ -16,6 +16,7 @@ public class Temperature extends Canvas {
 	 public String [][] tab_data = new String [20][2];	//table which save the temperature and the time
 	 public int Tmin;	//Maximal temperature
 	 public int Tmax;	//Minimal temperature
+	 //Temperature Temp = new Temperature();
 	 
    /*
    public CustomCanvas(int width, int height){
@@ -25,10 +26,10 @@ public class Temperature extends Canvas {
            this.update();
    }*/
    
-   public void update() 
+   /*public void update() 
    { 
 	   this.repaint(); 
-   }
+   }*/
 	  
    public void update(Graphics g)
    {
@@ -99,7 +100,11 @@ public class Temperature extends Canvas {
   
    public void tableau()
    {
+	   Temperature Temp = new Temperature();
 	   //int actual_temperature=0;
+	   Graphics g;
+	   Canvas cnvs = new Canvas();
+	   g= cnvs.getGraphics();
 	   int condition =0;
 	   while (condition!=-1)
 	  	{
@@ -112,7 +117,7 @@ public class Temperature extends Canvas {
 	  				tab_data[condition][0]=tab[0];	//date recovery
 	  				tab_data[condition][1]=tab[1];	//temperature recovery
 	  				convert=tab[1];
-	  				Integer actual_temperature = Integer.valueOf(convert);
+	  				//Integer actual_temperature = Integer.valueOf(convert);
 	  			}
 	  			else 
 	  			{
@@ -137,7 +142,8 @@ public class Temperature extends Canvas {
 	  	  			
 	  	  		}
 	  			condition++;
-	  			repaint();	//ça va avec la fonction update
+	  			//repaint();	//ça va avec la fonction update
+	  			Temp.paint(g);
 	  		
 	  	}
 	  		

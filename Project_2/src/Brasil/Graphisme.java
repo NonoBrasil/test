@@ -95,6 +95,8 @@ public class Graphisme
 			if(source==button)
 			{
 				//Daltoniens
+				pan.getContentPane().setBackground(Color.black);
+				
 				JLabel title = new JLabel("Graph: Temperature of the CPU of the raspberry");	//Title of the graph
 				pan.add(title, BorderLayout.CENTER);		//The title is on the top of the window
 			}
