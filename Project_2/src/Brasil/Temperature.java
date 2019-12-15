@@ -127,6 +127,16 @@ public class Temperature extends Canvas {
 	  				tab_data[19][0]=tab[0];	//date recovery
 	  				tab_data[19][1]=tab[1];	//temperature recovery
 	  			}
+	  			try
+	  	  		{
+	  	  			Thread.sleep(1000);
+	  	  		}
+	  	  		catch(InterruptedException ex)
+	  	  		{
+	  	  			Thread.currentThread().interrupt();
+	  	  			
+	  	  		}
+	  			condition++;
 	  			repaint();	//ça va avec la fonction update
 	  		
 	  	}
@@ -143,8 +153,8 @@ public class Temperature extends Canvas {
   	
   	graphe.fenetre();
   	
-  	while (condition!=-1)
-  	{	
+  	//while (condition!=-1)
+  //	{	
   		Temp.tableau();
   		
   		/*if(args.length==1)
@@ -182,18 +192,9 @@ public class Temperature extends Canvas {
       		System.out.println("Usage is:  java Client x.x.x.x  (e.g. java Client 192.168.7.2)");
       		System.out.println("      or:  java Client hostname (e.g. java Client localhost)");
       	}*/
-  		
-  		try
-  		{
-  			Thread.sleep(1000);
-  		}
-  		catch(InterruptedException ex)
-  		{
-  			Thread.currentThread().interrupt();
-  			
-  		}
-  		condition++;
-  	}
+  	
+  		//condition++;
+  	//}
   	    
   	System.out.println("**. End of Application.");
   }
