@@ -6,6 +6,8 @@ package Brasil;
 //import java.awt.Canvas;
 import java.awt.*;
 
+import javax.swing.JPanel;
+
 @SuppressWarnings("serial")
 
 public class Temperature extends Canvas {
@@ -23,11 +25,11 @@ public class Temperature extends Canvas {
            this.update();
    }*/
    
-   public void update() { this.repaint(); }
+   public void update() 
+   { 
+	   this.repaint(); 
+   }
 	  
-   
-   
-   
    public void update(Graphics g)
    {
 	   paint(g);
@@ -90,7 +92,7 @@ public class Temperature extends Canvas {
   	 actual_time++;	//incrementing of the time
   	 */
  	 g.dispose();
- 	 //cnvs.setVisible(true);
+ 	 cnvs.setVisible(true);
 
    }
 	
@@ -188,6 +190,7 @@ public class Temperature extends Canvas {
   		catch(InterruptedException ex)
   		{
   			Thread.currentThread().interrupt();
+  			
   		}
   		condition++;
   	}

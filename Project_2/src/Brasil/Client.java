@@ -11,7 +11,7 @@ import java.io.*;
 
 public class Client {
 	
-	private static int portNumber = 5050;
+	private static int portNumber = 5001;
     private Socket socket = null;
     private ObjectOutputStream os = null;
     private ObjectInputStream is = null;

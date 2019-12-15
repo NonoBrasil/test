@@ -10,7 +10,7 @@ import java.io.*;
 
 public class ThreadedServer 
 {
-	private static int portNumber = 5050;
+	private static int portNumber = 5001;
 	private static String LED0_PATH = "/sys/class/leds/led0";
 	
 	public static void main(String args[]) {

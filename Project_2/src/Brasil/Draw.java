@@ -12,7 +12,7 @@ public class Draw
 	
 	public void paintComponent(Graphics g)
 	{
-		super.paintComponent(g);
+		//super.paintComponent(g);
 		//Graphics2D g2 = (Graphics2D) g;
 		//COORDINATE SYSTEM
 	 	  g.drawLine(100, 200, 100, 700);	//coordinate system - ordinate

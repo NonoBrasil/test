@@ -73,7 +73,6 @@ public class Graphisme
 		//JTextArea frequency = new JTextArea(1,1);
 		//pan.add(frequency,BorderLayout.CENTER); 
 		
-		
 		frame.setContentPane(pan);	//the panel becomes vidible
 	    frame.setVisible(true);		//Window becomes visible
 		

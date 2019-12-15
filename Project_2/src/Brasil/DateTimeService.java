@@ -138,7 +138,7 @@ public class DateTimeService
         	
      String time_rasp= d.toString();
 	 //We make a table of string to be able to send the cLient the corresponding time and temperature.
-	 String [ ] tab = new String[2];
+	 String [ ] chart = new String[2];
 	 
 	 hour=String.valueOf(time_rasp.charAt(11))+String.valueOf(time_rasp.charAt(12));
  	 //Convert char to string : https://www.javatpoint.com/java-char-to-string
@@ -146,7 +146,7 @@ public class DateTimeService
  	 minutes=String.valueOf(time_rasp.charAt(14))+String.valueOf(time_rasp.charAt(15));
  	 seconds=String.valueOf(time_rasp.charAt(17))+String.valueOf(time_rasp.charAt(18));
  	 time=hour+minutes+seconds;
- 	 tab[0]=time;
+ 	 chart[0]=time;
  	 
      FileReader filereader = null;
      BufferedReader bufferedreader = null;
@@ -155,7 +155,7 @@ public class DateTimeService
          bufferedreader = new BufferedReader(filereader);
          String strCurrentLine=null;
          while ((strCurrentLine = bufferedreader.readLine()) != null) {
-        	tab[1]=strCurrentLine;	//The second line of the table collects the temperature.
+        	chart[1]=strCurrentLine;	//The second line of the table collects the temperature.
         	System.out.println(strCurrentLine);
          }
      }
@@ -178,6 +178,6 @@ public class DateTimeService
          }
        }
  	 
-     return tab;	
+     return chart;	
    }	
 }
