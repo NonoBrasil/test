@@ -5,14 +5,11 @@ import java.io.*;
 /* The Date Time Service Class - Written by Derek Molloy for the EE402 Module
  * See: ee402.eeng.dcu.ie
  
-
-
 import java.awt.Color;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
 public class DateTimeService
 {
    private Calendar calendar;
@@ -21,7 +18,6 @@ public class DateTimeService
    public float Tmin=0;	//minimum temperature
    public float Tmax=0; 	//maximum temperature
    
-
    //constructor creates the Calendar object, could use the constructor:
    //   Calendar(TimeZone zone, Locale aLocale) to explicitly specify 
    //	  the time zone and locale
@@ -29,7 +25,6 @@ public class DateTimeService
    {
 	 this.calendar = Calendar.getInstance();
    }
-
    //method returns date/time as a formatted String object
    ///public String getDateAndTime()
    public String[] getDateAndTime()
@@ -107,7 +102,6 @@ public class DateTimeService
   	
      return tab;
    }
-
 	
 }*/
 
